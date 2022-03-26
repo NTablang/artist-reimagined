@@ -3,10 +3,15 @@ const navBtn = document.querySelector(".nav-btn");
 const rotatingSvg = document.getElementById("rotating-svg");
 const arrow = document.querySelector(".arrow");
 const topSub = document.querySelector(".top-sub");
-
+const galleries = document.querySelectorAll("#gallery1");
+const exhibitionsMsg = document.querySelector(".exhibitions-msg");
+const printer = document.getElementById("print");
+const text = document.getElementById("htmeditor-file-input-open-file");
+const sidenavContent = document.getElementById("sidenav-content");
 
 /*textFit(document.querySelector("h1"));*/
 
+sidenavContent.style.display="none";
 
 document.addEventListener('click', (event) => {
   const withinBoundaries = event.composedPath().includes(target)
@@ -18,6 +23,11 @@ document.addEventListener('click', (event) => {
     rotatingSvg.style.display = "none";
     arrow.style.display = "none";
     topSub.style.display = "none";
+    galleries.forEach((gallery) => {
+        gallery.style.display = "none";
+    })
+    exhibitionsMsg.style.display = "none";
+    sidenavContent.style.display="inline";
 
 
 
@@ -27,18 +37,29 @@ document.addEventListener('click', (event) => {
     rotatingSvg.style.display = "inline";
     arrow.style.display = "inline";
     topSub.style.display = "inline";
-
+    galleries.forEach((gallery) => {
+        gallery.style.display = "inline";
+        gallery.style.justifyContent = "space-between";
+    })
+    exhibitionsMsg.style.display = "inline";
+    sidenavContent.style.display = "none";
 
 
 
   } 
 })
 
+function printConsole() {
+    console.log(text);
+}
+
 target.addEventListener("mouseover", () => {
     // hover effect when sidenav is clicked
     if (target.classList.contains("is-opened")) {
         target.style.width = "102vw"
         target.style.transitionDuration = "350ms";
+        document.body.style.paddingLeft = "2vw";
+        document.body.style.transitionDuration = "350ms";
 
         
     }
@@ -55,12 +76,18 @@ target.addEventListener("mouseleave", () => {
     // sidenav is clicked
     if (target.classList.contains("is-opened")) {
         target.style.width = "100vw";
+        document.body.style.paddingLeft = "0vw";
+        document.body.style.transitionDuration = "350ms";
+
 
     }
     // when hover effect is not applied and
     // sidenav is not clicked
     else {
         target.style.width = "4vw";
+        document.body.style.paddingLeft = "0vw";
+        document.body.style.transitionDuration = "350ms";
+
     }
 })
 
@@ -90,17 +117,3 @@ AOS.init({
     duration: 1200,
 })
 
-const img = document.getElementById("placeholder");
-let i = 0;
-setInterval(() => {
-    const photos = [
-        "photo1.jpg",
-        "musoleo.jpg",
-        "photo2.jpg",
-        "photo3.jpg"
-    ];
-    img.src = photos[i];
-
-    i++;
-    if (i == 4) i = 0;
-}, 3000);

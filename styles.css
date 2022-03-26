@@ -6,7 +6,8 @@
 
 
 html, body {
-    background: #161616;
+    background: rgb(32, 31, 31);
+
     width: 100vw;
     color: white;
     margin: 0;
@@ -30,13 +31,116 @@ html, body {
     top:0;
     z-index: 10;
     background: rgb(32, 31, 31);
+
     
+}
+#sidenav-content {
+    margin: 2vh 3vw 2vh 2vw;
+    width: 100%;
+    overflow: hidden;
+
+}
+.links {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 5vh;
 }
 .nav-btn {
     margin-top: auto;
     margin-bottom: auto;
+    margin-left: auto;
+    margin-right: 10px;
+}
+.group-1 {
+    width: 100%;
+}
+.link-cont {
+    height: auto;
+    display: flex;
+    margin-bottom: 2vh;
+    font-size: 20px;
+    padding: 1vh 1vw 1vh 1vw;
+    border-top: solid 1px rgba(255, 255, 255, 0.692);
+    border-bottom: solid 1px rgba(255, 255, 255, 0.692);
+    font-family: "Lato";
+    justify-content:space-around;
+
+
+}
+#ebooks, #products, #contacts {
+    font-size: 70px;
+    font-weight: bolder;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    margin-bottom: 2vh;
+
+
+}
+.sidenav-title::before {
+    content: "STUDIO SOLUM";
+    color: white;
+    font-weight: bold;
+    font-style: italic;
+}
+.sidenav-title:hover::before {
+    content: "FREDINEL BANAAG | STUDIO SOLUM";
+    color: white;
+    transition: content 350ms ease;
+}
+#ebooks a, #products a, #contacts a {
+    color: white;
+
+}
+#ebooks a:hover, #products a:hover, #contacts a:hover {
+    -webkit-text-stroke: 2px white;
+    color: transparent
+}
+a:hover {
+    color: white;
+
+}
+.left-link:hover {
+    border-left: 1px solid white;
+    padding-left: 1vw;
+    transition: 350ms padding-left ease;
+
+
+}
+.right-link:hover {
+    border-left: 1px solid white;
+    padding-left: 1vw;
+    transition: 350ms padding-left ease;
+    
+
+}
+.left-link {
+    min-width: 14vw;
+    max-width: 14vw;
+
+}
+.right-link {
+    min-width: 14vw;
+    max-width: 14vw;
+
+}
+ul {
+    text-decoration: none;
+    list-style-type: none;
+    font-family: "Roboto";
+}
+li {
+    margin-bottom: 5vh;
+    font-style: "Roboto";
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+}
+a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.521);
 }
 .feed {
+    background: #161616;
     padding-right: 2vw;
     display: flex;
     flex-direction: column;
@@ -160,7 +264,6 @@ html, body {
     position: sticky;
     top:0;
     left: 69.5vw;
-    display: none;
 }
 /*
 .mid-content {
@@ -433,4 +536,51 @@ svg textPath {
 ::-webkit-scrollbar {
     width: 0px;
     background: transparent; /* make scrollbar transparent */
+}
+
+
+.main {
+    padding: 2vh 2vw;
+}
+.title-main {
+    font-size: 64px;
+    font-weight: bold;
+    font-style: italic;
+    mix-blend-mode: difference;
+    position: sticky;
+    top: 0;
+    padding-top:7vh;
+}
+.main-content {
+    display: flex;
+}
+.main-sub {
+    padding: 3vh 3vw;
+    font-weight: 100;
+}
+#homage {
+    height: auto;
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+.date {
+    color: rgba(255, 255, 255, 0.767);
+    font-size: 20px;
+    font-style: italic;
+    width:auto;
+    margin-right: auto;
+    display:inline-block;
+
+}
+.date:hover {
+    color: white;
+}
+.nonstick-title-main {
+    font-size: 64px;
+    font-weight: bold;
+    font-style: italic;
+    mix-blend-mode: difference;
+    top: 0;
+    padding-top:7vh;
 }
